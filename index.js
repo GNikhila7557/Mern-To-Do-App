@@ -5,9 +5,13 @@ const app = express();
 app.use(express.json());
 const mongoose = require('mongoose');
 const taskRoutes = require('./routes/taskroutes');
+import dotenv from 'dotenv';
+dotenv.config();
+
+MONGO_URI = process.env.MONGO_URI;
 
 mongoose
-    .connect('mongodb://localhost:27017/To-Do-App', {
+    .connect('', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
