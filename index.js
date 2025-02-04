@@ -5,13 +5,13 @@ const app = express();
 app.use(express.json());
 const mongoose = require('mongoose');
 const taskRoutes = require('./routes/taskroutes');
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config();
 
-MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URL;
 
 mongoose
-    .connect('', {
+    .connect(MONGO_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
