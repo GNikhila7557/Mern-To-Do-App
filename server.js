@@ -23,6 +23,10 @@ const errorHandler = (err, req, res, next) => {
     res.status(500).json({message: 'Something went wrong!'});
 };
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the To-Do App!');  // Or send any content
+});
+
 // Health check route
 app.get('/health', (req, res) => {
     res.status(200).send('Everything is working fine!'); 
