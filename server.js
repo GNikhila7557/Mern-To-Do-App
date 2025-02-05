@@ -1,6 +1,5 @@
 /*To-Do App Application */
 const express = require('express');
-const port = 3000;
 const app = express();
 app.use(express.json());
 const mongoose = require('mongoose');
@@ -37,6 +36,7 @@ app.use('/tasks', taskRoutes);
 
 app.use(errorHandler);
 
-app.listen(port, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
     console.log(`Server is running on port ${port}`);
 });
