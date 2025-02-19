@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: mern-to-do-app
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    branch: main
+    repo: https://github.com/GNikhila7557/Mern-To-Do-App
+    envVars:
+      - key: NODE_ENV
+        value: production
